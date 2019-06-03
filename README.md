@@ -10,9 +10,9 @@ pip install -r requirements.txt
 
 Import this module into other scripts and pass through the following:
 
-* MultiSite Controller Hostname/IP Address
-* MultiSite Username
-* MultiSite Password
+* Multi-Site Controller Hostname/IP Address
+* Multi-Site Username
+* Multi-Site Password
 
 Usage Example:
 

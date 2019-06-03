@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 
 """
-This script completes the login process for the Cisco Multisite Controller
+This script completes the login process for the Cisco Multi-Site Controller
 and returns the token required for future API calls
 """
 
