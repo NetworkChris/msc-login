@@ -14,8 +14,8 @@ def login(msc_hostname, msc_username, msc_password):
     urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
     msc_credentials = {
-        "username": "admin",
-        "password": "Password"
+        "username": msc_username,
+        "password": msc_password
         }
 
     msc_headers = {
@@ -24,8 +24,8 @@ def login(msc_hostname, msc_username, msc_password):
         }
 
     msc_api_base = "https://{msc}/api/v1"
-    msc_auth_url = api_base + "/auth/login"
-    msc_url = auth_url.format(msc=msc_hostname)
+    msc_auth_url = msc_api_base + "/auth/login"
+    msc_url = msc_auth_url.format(msc=msc_hostname)
     msc_body = json.dumps(msc_credentials, indent=4)
 
     msc_login = requests.request(
@@ -35,8 +35,8 @@ def login(msc_hostname, msc_username, msc_password):
         data=msc_body,
         verify=False)
 
-    msc_response = json.loads(login.text)
-    msc_token = response["token"]
+    msc_response = json.loads(msc_login.text)
+    msc_token = msc_response["token"]
 
     return msc_token
 
